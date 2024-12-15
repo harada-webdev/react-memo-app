@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import MemoList from "./components/MemoList";
 import MemoDetail from "./components/MemoDetail";
+import "./styles/App.css";
 
 export default function App() {
   const [memos, setMemos] = useState(() => {
@@ -37,9 +38,17 @@ export default function App() {
   }
 
   return (
-    <>
-      <MemoList memos={memos} setEditingMemo={setEditingMemo} />
-      <button onClick={handleAddMemo}>+</button>
+    <div className="memo-app-container">
+      <div>
+        <MemoList
+          memos={memos}
+          setEditingMemo={setEditingMemo}
+          editingMemo={editingMemo}
+        />
+        <button onClick={handleAddMemo} className="add-button">
+          +
+        </button>
+      </div>
       {editingMemo && (
         <MemoDetail
           editingMemo={editingMemo}
@@ -47,6 +56,6 @@ export default function App() {
           onDelete={handleDeleteMemo}
         />
       )}
-    </>
+    </div>
   );
 }
