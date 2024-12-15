@@ -1,0 +1,26 @@
+.memo-list li {
+  color: blue;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.memo-list li:hover {
+  background-color: #ddffff;
+}
+
+.memo-list li.selected {
+  color: black;
+  cursor: default;
+}
+
+.memo-list li.selected:hover {
+  background-color: transparent;
+}
+
+.title {
+  border-bottom: 1px solid blue;
+}
+
+.memo-list li.selected .title {
+  border-bottom: none;
+}

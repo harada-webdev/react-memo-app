@@ -1,0 +1,20 @@
+.memo-detail {
+  width: 50%;
+  margin-top: 15px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+}
+
+.edit-button {
+  width: 70%;
+  padding: 10px;
+}
+
+.delete-button {
+  width: 30%;
+  margin-left: 10px;
+}
