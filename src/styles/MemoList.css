@@ -1,0 +1,20 @@
+.title {
+  display: inline-block;
+  color: blue;
+  border-bottom: 1px solid blue;
+  margin-left: -20px;
+}
+
+.title:hover {
+  background-color: #ddffff;
+}
+
+.title.selected {
+  border-bottom: none;
+  color: black;
+  cursor: default;
+}
+
+.title.selected:hover {
+  background-color: transparent;
+}
