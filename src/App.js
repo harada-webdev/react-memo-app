@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
+import { useAuth } from "./components/auth-hooks";
 import MemoList from "./components/MemoList";
 import MemoDetail from "./components/MemoDetail";
 import "./styles/App.css";
 
 export default function App() {
+  const { isLoggedIn, login, logout } = useAuth();
   const [memos, setMemos] = useState(() => {
     const savedMemos = localStorage.getItem("memos");
     return savedMemos ? JSON.parse(savedMemos) : [];
@@ -38,24 +40,33 @@ export default function App() {
   }
 
   return (
-    <div className="memo-app-container">
-      <div>
-        <MemoList
-          memos={memos}
-          setEditingMemo={setEditingMemo}
-          editingMemo={editingMemo}
-        />
-        <button onClick={handleAddMemo} className="add-button">
-          +
-        </button>
-      </div>
-      {editingMemo && (
-        <MemoDetail
-          editingMemo={editingMemo}
-          onEdit={handleEditMemo}
-          onDelete={handleDeleteMemo}
-        />
+    <div>
+      {isLoggedIn ? (
+        <button onClick={logout}>ログアウト</button>
+      ) : (
+        <button onClick={login}>ログイン</button>
       )}
+      <div className="memo-app-container">
+        <div>
+          <MemoList
+            memos={memos}
+            setEditingMemo={setEditingMemo}
+            editingMemo={editingMemo}
+          />
+          {isLoggedIn && (
+            <button onClick={handleAddMemo} className="add-button">
+              +
+            </button>
+          )}
+        </div>
+        {editingMemo && (
+          <MemoDetail
+            editingMemo={editingMemo}
+            onEdit={handleEditMemo}
+            onDelete={handleDeleteMemo}
+          />
+        )}
+      </div>
     </div>
   );
 }
