@@ -42,9 +42,13 @@ export default function App() {
   return (
     <div>
       {isLoggedIn ? (
-        <button onClick={logout}>ログアウト</button>
+        <button onClick={logout} className="logout-button">
+          ログアウト
+        </button>
       ) : (
-        <button onClick={login}>ログイン</button>
+        <button onClick={login} className="login-button">
+          ログイン
+        </button>
       )}
       <div className="memo-app-container">
         <div>

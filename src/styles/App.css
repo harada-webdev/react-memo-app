@@ -33,6 +33,16 @@ textarea {
   box-sizing: border-box;
 }
 
+.login-button {
+  margin-left: 364px;
+  padding: 8px;
+}
+
+.logout-button {
+  margin-left: 348px;
+  padding: 8px;
+}
+
 .add-button {
   margin-left: 16px;
 }
