@@ -1,0 +1,38 @@
+.memo-app-container {
+  display: flex;
+  gap: 72px;
+}
+
+li {
+  margin-bottom: 4px;
+  list-style-type: none;
+}
+
+button {
+  background-color: lightgray;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: gray;
+  color: white;
+  border-color: darkgray;
+}
+
+textarea {
+  width: 50%;
+  height: 400px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.add-button {
+  margin-left: 16px;
+}
