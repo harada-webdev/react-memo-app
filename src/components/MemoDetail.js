@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "./auth-hooks";
+import { useAuth } from "../hooks/auth-hooks";
 import "../styles/MemoDetail.css";
 
 export default function MemoDetail({ editingMemo, onEdit, onDelete }) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
-import { useAuth } from "./components/auth-hooks";
+import { useAuth } from "./hooks/auth-hooks";
 import MemoList from "./components/MemoList";
 import MemoDetail from "./components/MemoDetail";
 import "./styles/App.css";
